@@ -1,0 +1,35 @@
+{
+  "name": "ngWorker",
+  "homepage": "https://github.com/match08/ngWorker",
+  "authors": [
+    "match08 <match_2006@qq.com>"
+  ],
+  "description": "Web worker in angular",
+  "main": "ngWorker.js",
+  "keywords": [
+    "ngWorker",
+    "worker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  },
+  "_release": "1164689b03",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1164689b0385d6785830eadf4c5b90ed83788033"
+  },
+  "_source": "https://github.com/match08/ngWorker.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/match08/ngWorker.git",
+  "_direct": true
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ngWorker audio record</title>
+	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="lib/ngWorker/ngWorker.js"></script>
+	<script type="text/javascript" src="../../ngWorkerAudioRecorder.min.js"></script>
+	<script type="text/javascript">
+	    /**
+	    * ngWorkerAudioRecorderDemo1 Module
+	    *
+	    * github: https://github.com/match08/ngWorker
+	    * website http://www.weismarts.com
+	    * author match08
+	    * Description ngWorker audio recorder demo1
+	    */
+	     angular.module('ngWorkerAudioRecorderDemo1', ['ngWorkerAudioRecorder'])
+	     .run(function ($rootScope, wsMediaService, wsAudioRecorder) {
+	     			
+	     	  var audioRecorderConfig = {
+			       errorCallback: function(error) {
+			          console.log('error',error);
+			       },
+			       outputSampleRate: 8000
+			  };
+			  //初始化
+			  wsMediaService.init().then(function(stream){
+			    $rootScope.recorder = wsAudioRecorder.$new(stream, audioRecorderConfig);
+			    console.log( $rootScope.recorder);
+			  });
+
+			  $rootScope.getBuffer = function(){
+			      $rootScope.recorder.getBuffer(function(data){
+			          console.log('getBuffer', data);
+			      });
+			  };
+			  var blob = null;
+			  $rootScope.exportWAV = function(){
+			      $rootScope.recorder.exportWAV(function(data){
+			          console.log('exportWAV', data);
+			          blob = data;
+			      });
+			  };
+			  $rootScope.forceDownload = function(){
+			      $rootScope.recorder.forceDownload(blob,'test');
+			  };
+
+
+	     });
+	</script>
+</head>
+<body ng-app="ngWorkerAudioRecorderDemo1">
+	<button ng-click="recorder.start(0)">start</button>
+    <button ng-click="recorder.stop()">stop</button>
+    <button ng-click="getBuffer()">getBuffer</button>
+    <button ng-click="exportWAV()">exportWAV</button>
+    <button ng-click="forceDownload()">forceDownload</button>	
+</body>
+</html>
