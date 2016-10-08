@@ -184,7 +184,7 @@ angular.module('ngWorkerAudioRecorder', ['ngWorker'])
 		
         function exportWAV(type) {
             var buffers = [];
-            for (let channel = 0; channel < numChannels; channel++) {
+            for (var channel = 0; channel < numChannels; channel++) {
                 buffers.push(_mergeBuffers(recBufferService.buffers[channel], recBufferService.buffersLength));
             }
             var interleaved;
@@ -319,7 +319,7 @@ angular.module('ngWorkerAudioRecorder', ['ngWorker'])
     };
 
     var self = {};
-    //使能
+    //创建一个新的
 	self.$new = function(stream, audioRecorderConfig){
 		var AudioContext =  window.AudioContext;  
 		var audioContext = new AudioContext();
