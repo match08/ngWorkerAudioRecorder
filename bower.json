@@ -1,0 +1,27 @@
+{
+  "name": "ngWorkerAudioRecorder",
+  "main": "ngWorkerAudioRecorder.js",
+  "authors": [
+    "match08 <match_2006@qq.com>"
+  ],
+  "description": "ngWorker in Audio record",
+  "keywords": [
+    "angular",
+    "ionic",
+    "ngWorker",
+    "worker"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/match08/ngWorkerAudioRecorder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngWorker": "https://github.com/match08/ngWorker.git"
+  }
+}
