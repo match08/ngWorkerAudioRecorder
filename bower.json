@@ -1,5 +1,5 @@
 {
-  "name": "ngWorkerAudioRecorder",
+  "name": "ng-worker-audio-recorder",
   "main": "ngWorkerAudioRecorder.js",
   "authors": [
     "match08 <match_2006@qq.com>"
